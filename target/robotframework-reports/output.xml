@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.0 (Jython 2.7.0 on java1.8.0_291)" generated="20210627 21:09:04.951">
+<suite source="C:\Users\Said KHAMMAR\workspace\RobotFrameworkTest\src\test\robotframework\acceptance" name="Acceptance" id="s1">
+<suite source="C:\Users\Said KHAMMAR\workspace\RobotFrameworkTest\src\test\robotframework\acceptance\Test_Case_1.robot" name="Test Case 1" id="s1-s1">
+<test name="TC_001 Browser Start and Close" id="s1-s1-t1">
+<kw library="BuiltIn" name="Evaluate">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys, selenium.webdriver</arg>
+</arguments>
+<assign>
+<var>${options}</var>
+</assign>
+<msg level="INFO" timestamp="20210627 21:09:07.847">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x2&gt;</msg>
+<status endtime="20210627 21:09:07.849" starttime="20210627 21:09:06.128" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Call Method">
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<arguments>
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>headless</arg>
+</arguments>
+<status endtime="20210627 21:09:07.855" starttime="20210627 21:09:07.850" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Call Method">
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<arguments>
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>disable-gpu</arg>
+</arguments>
+<status endtime="20210627 21:09:07.861" starttime="20210627 21:09:07.857" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Call Method">
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<arguments>
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-web-security</arg>
+</arguments>
+<status endtime="20210627 21:09:07.866" starttime="20210627 21:09:07.863" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Call Method">
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<arguments>
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--allow-running-insecure-content</arg>
+</arguments>
+<status endtime="20210627 21:09:07.870" starttime="20210627 21:09:07.867" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Call Method">
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<arguments>
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--user-data-dir\=C:\\Users\\Said KHAMMAR\\workspace\\RobotFrameworkTest\\src\\test\\robotframework\\acceptance/ChromeDevSession</arg>
+</arguments>
+<status endtime="20210627 21:09:07.877" starttime="20210627 21:09:07.871" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Call Method">
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<arguments>
+<arg>${options}</arg>
+<arg>to_capabilities</arg>
+</arguments>
+<assign>
+<var>${chrome_options}</var>
+</assign>
+<msg level="INFO" timestamp="20210627 21:09:07.883">${chrome_options} = {'version': '', 'platform': 'ANY', 'browserName': 'chrome', 'javascriptEnabled': True, 'chromeOptions': {'args': [u'headless', u'disable-gpu', u'--disable-web-security', u'--allow-running-insecure-con...</msg>
+<status endtime="20210627 21:09:07.884" starttime="20210627 21:09:07.879" status="PASS"></status>
+</kw>
+<kw library="Selenium2Library" name="Open Browser">
+<doc>Opens a new browser instance to given URL.&lt;br&gt;</doc>
+<arguments>
+<arg>${URL}</arg>
+<arg>chrome</arg>
+<arg>remote_url=http://localhost:4444/wd/hub</arg>
+</arguments>
+<msg level="INFO" timestamp="20210627 21:09:07.896">browserName: chrome</msg>
+<msg level="INFO" timestamp="20210627 21:09:07.899">Opening browser 'chrome' to base url 'http://www.google.com'</msg>
+<msg level="INFO" timestamp="20210627 21:09:13.248">Starting ChromeDriver 90.0.4430.24 (4c6d850f087da467d926e8eddb76550aed655991-refs/branch-heads/4430@{#429}) on port 9100
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully.
+juin 27, 2021 9:09:09 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFOS: Attempting bi-dialect session, assuming Postel's Law holds true on the remote end
+[1624820950.927][WARNING]: This version of ChromeDriver has not been tested with Chrome version 91.
+juin 27, 2021 9:09:10 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFOS: Falling back to original OSS JSON Wire Protocol.
+[1624820952.105][WARNING]: This version of ChromeDriver has not been tested with Chrome version 91.
+juin 27, 2021 9:09:12 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFOS: Detected dialect: OSS</msg>
+<status endtime="20210627 21:09:13.251" starttime="20210627 21:09:07.885" status="PASS"></status>
+</kw>
+<kw library="Selenium2Library" name="Input Text">
+<doc>Types the given &lt;b&gt;text&lt;/b&gt; into the text field identified by</doc>
+<arguments>
+<arg>id=username</arg>
+<arg>demo</arg>
+</arguments>
+<msg level="INFO" timestamp="20210627 21:09:13.270">Typing text 'demo' into text field 'id=username'</msg>
+<kw library="Selenium2Library" name="Capture Page Screenshot">
+<doc>Take a screenshot of the current page and embed it into the log.&lt;br&gt;</doc>
+<msg level="INFO" html="yes" timestamp="20210627 21:09:13.652">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status endtime="20210627 21:09:13.653" starttime="20210627 21:09:13.382" status="PASS"></status>
+</kw>
+<msg level="FAIL" timestamp="20210627 21:09:13.665">Element locator 'id=username' did not match any elements.</msg>
+<status endtime="20210627 21:09:13.667" starttime="20210627 21:09:13.258" status="FAIL"></status>
+</kw>
+<kw type="teardown" library="Selenium2Library" name="Close All Browsers">
+<doc>Closes all open browser instances and resets the browser cache.&lt;br&gt;</doc>
+<status endtime="20210627 21:09:15.882" starttime="20210627 21:09:13.669" status="PASS"></status>
+</kw>
+<status critical="yes" endtime="20210627 21:09:15.883" starttime="20210627 21:09:06.123" status="FAIL">Element locator 'id=username' did not match any elements.</status>
+</test>
+<doc>Login Test Case.</doc>
+<status endtime="20210627 21:09:15.887" starttime="20210627 21:09:05.216" status="FAIL"></status>
+</suite>
+<status endtime="20210627 21:09:15.898" starttime="20210627 21:09:04.964" status="FAIL"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1">Critical Tests</stat>
+<stat pass="0" fail="1">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" name="Acceptance" id="s1">Acceptance</stat>
+<stat pass="0" fail="1" name="Test Case 1" id="s1-s1">Acceptance.Test Case 1</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

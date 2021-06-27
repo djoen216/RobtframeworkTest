@@ -1,0 +1,135 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.robotTest.app</groupId>
+  <artifactId>RobotFrameworkTest</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+  <name>RobotFrameworkTest</name>
+  <url>http://maven.apache.org</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/org.robotframework/robotframework -->
+    <dependency>
+    	<groupId>org.robotframework</groupId>
+    	<artifactId>robotframework</artifactId>
+    	<version>2.8.7</version>
+	</dependency>
+	<dependency>
+    	<groupId>com.github.hi-fi</groupId>
+   	    <artifactId>robotframework-seleniumlibrary</artifactId>
+    	<version>3.141.59.2653</version>
+    </dependency>
+	<!-- https://mvnrepository.com/artifact/com.github.markusbernhardt/robotframework-selenium2library-java -->
+	<dependency>
+    	<groupId>com.github.markusbernhardt</groupId>
+    	<artifactId>robotframework-selenium2library-java</artifactId>
+    	<version>1.4.0.8</version>
+	</dependency>
+	 		<dependency>
+		    <groupId>org.seleniumhq.selenium.grid</groupId>
+		    <artifactId>selenium-grid-hub</artifactId>
+		    <version>1.0.5</version>
+    </dependency>
+    <dependency>
+        <groupId>org.seleniumhq.selenium</groupId>
+        <artifactId>selenium-java</artifactId>
+        <version>3.141.59</version>
+    </dependency>
+  </dependencies>
+  <build>
+  <plugins>
+  	<plugin>
+  		<configuration>
+  			<extraPathDirectories>
+             	<extraPathDirectory>${project.basedir}/src/test/java/python</extraPathDirectory>
+			</extraPathDirectories>
+  	    </configuration>
+  	  <dependencies>
+					<dependency>
+                        <groupId>org.hsqldb</groupId>
+                        <artifactId>hsqldb</artifactId>
+                        <version>1.8.0.10</version>
+                    </dependency>
+                    
+                    <dependency>
+                        <groupId>com.trilead</groupId>
+                        <artifactId>trilead-ssh2</artifactId>
+                        <version>build213-svnkit-1.3-patch</version>
+                    </dependency>
+                    
+					<dependency>
+						<groupId>org.apache.commons</groupId>
+						<artifactId>commons-io</artifactId>
+						<version>1.3.2</version>
+					</dependency>
+
+					<dependency>
+						<groupId>net.sourceforge.htmlunit</groupId>
+						<artifactId>htmlunit</artifactId>
+						<version>2.4</version>
+					</dependency>
+
+					<dependency>
+						<groupId>org.seleniumhq.selenium</groupId>
+						<artifactId>selenium-ie-driver</artifactId>
+						<version>3.0.1</version>
+					</dependency>
+					<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-remote-driver -->
+
+					<dependency>
+						<groupId>org.seleniumhq.selenium</groupId>
+						<artifactId>selenium-remote-driver</artifactId>
+						<version>3.0.1</version>
+					</dependency>
+				</dependencies> 
+      <groupId>org.robotframework</groupId>
+      <artifactId>robotframework-maven-plugin</artifactId>
+      <version>1.4.6</version>
+        <executions>
+          <execution>
+              <goals>
+                <goal>run</goal>
+              </goals>
+          </execution>
+        </executions>  
+    </plugin>
+    </plugins> 
+  </build>
+  <profiles>
+		    <!-- activate this to test webdriver compatibility -->
+		    <profile>
+		      <id>webdriver</id>
+		      <activation>
+		        <property>
+		          <name>webdriver</name>
+		          <value>true</value>
+		        </property>
+		      </activation>
+		      <dependencies>
+		            <!--  WebDriver Selenium 2.x remote control server -->
+		        <dependency>
+		          <groupId>org.seleniumhq.selenium</groupId>
+		          <artifactId>selenium-server-standalone</artifactId>
+		          <version>2.0b3</version>
+		          <optional>true</optional>
+		          <scope>runtime</scope>
+		        </dependency>
+		      </dependencies>
+		    </profile>
+		
+		    
+		  </profiles>
+</project>
