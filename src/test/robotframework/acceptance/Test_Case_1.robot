@@ -11,7 +11,7 @@ ${DESIRED_CAPABILITIES}     browserName: chrome, maxInstances: 5, platform: WIN1
  
 *** Test Cases ***
 TC_001 Browser Start and Close
-	${options}=    Evaluate  sys.modules['selenium.webdriver'].ChromeOptions()  sys, selenium.webdriver
+    ${options}=    Evaluate  sys.modules['selenium.webdriver'].ChromeOptions()  sys, selenium.webdriver
     Call Method    ${options}    add_argument    headless
     Call Method    ${options}    add_argument    disable-gpu
     Call Method    ${options}    add_argument      --disable-web-security
@@ -19,8 +19,7 @@ TC_001 Browser Start and Close
     Call Method    ${options}    add_argument      --user-data-dir\=${CURDIR}/ChromeDevSession
     ${chrome_options}=    Call Method     ${options}    to_capabilities
     Open Browser    ${URL}    chrome    remote_url=http://localhost:4444/wd/hub
-	Input Text  id=username  demo
-	Input Password  id=password  abc123
-	Click Button  xpath=//*[@id="login1"]/form/div[9]/button
-	Capture Page Screenshot
+    Input Text  xpath=/html/body/div[1]/div[3]/form/div[1]/div[1]/div[1]/div/div[2]/input  abc123
+    Click Button  xpath=/html/body/div[1]/div[3]/form/div[1]/div[1]/div[3]/center/input[1]
+    Capture Page Screenshot
     [Teardown]    Close All Browsers
