@@ -18,7 +18,7 @@ TC_001 Browser Start and Close
     Call Method    ${options}    add_argument      --allow-running-insecure-content
     Call Method    ${options}    add_argument      --user-data-dir\=${CURDIR}/ChromeDevSession
     ${chrome_options}=    Call Method     ${options}    to_capabilities
-    Open Browser    ${URL}    chrome    remote_url=http://172.24.176.1:4444/wd/hub
+    Open Browser    ${URL}    chrome    remote_url=http://localhost:4444/wd/hub
     #Input Text  xpath=/html/body/div[1]/div[3]/form/div[1]/div[1]/div[1]/div/div[2]/input  abc123
     Sleep    5
     #Click Button  name=btnK
