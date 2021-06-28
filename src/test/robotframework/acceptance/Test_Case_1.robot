@@ -12,8 +12,8 @@ ${DESIRED_CAPABILITIES}     browserName: chrome, maxInstances: 5, platform: WIN1
 *** Test Cases ***
 TC_001 Browser Start and Close
     ${options}=    Evaluate  sys.modules['selenium.webdriver'].ChromeOptions()  sys, selenium.webdriver
-    Call Method    ${options}    add_argument    headless
-    Call Method    ${options}    add_argument    disable-gpu
+    #Call Method    ${options}    add_argument    headless
+    #Call Method    ${options}    add_argument    disable-gpu
     Call Method    ${options}    add_argument      --disable-web-security
     Call Method    ${options}    add_argument      --allow-running-insecure-content
     Call Method    ${options}    add_argument      --user-data-dir\=${CURDIR}/ChromeDevSession
